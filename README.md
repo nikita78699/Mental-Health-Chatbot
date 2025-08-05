@@ -114,8 +114,9 @@ This structure helps the chatbot provide **empathetic and intelligent replies**,
 ## 🙋‍♀️ Author
 
 **Nikita Singhal**  
-Full-stack Developer | AI Enthusiast | Mental Health Advocate  
+Full-stack Developer | AI Enthusiast 
 [GitHub Profile](https://github.com/nikita78699)
+[Linkedln](https://www.linkedin.com/in/nikita-singhal-77b6801b5)
 
 ---
 

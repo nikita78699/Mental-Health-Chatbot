@@ -1,47 +1,121 @@
-Mental Health Chatbot for Employee Mental Health System
-OBJECTIVES:
-The objectives of this project are as follows:
+# 🧠 Mental Health Chatbot for Employee Well-being
 
+This project aims to build an intelligent system that supports employee mental health by identifying stress indicators and offering empathetic responses and mood-based music recommendations using NLP and machine learning.
 
-PHASE I(Completed):
-Data Collection: Gather comprehensive historical data on employees, including demographic information, work-related factors (e.g., workload, job role, work hours), and mental health-related indicators (e.g., self-reported stress levels, absenteeism).
-Data Preprocessing: Clean and preprocess the collected data, addressing issues such as missing values and duplicate values. This ensures the data is suitable for modelling.
-Model Development: Build a BERT based model capable of predicting the likelihood of an employee experiencing mental health issues based on the selected features.
-Classification: Classify the employee as suffering from Depression, Anxiety, Frustration or Stress.
+---
 
+## 🎯 Objectives
 
-PHASE II:
-Incorporating a simple conversational agent using natural language processing techniques.
-Song Recommendation based on the user's mood.
-Integration of chatbot and the prediction model in a user friendly application for easy usage.
+The core goals of the system are:
 
+- Identify mental health issues in employees based on behavioral and demographic data.
+- Enable mental health prediction and classification using deep learning models.
+- Develop a conversational AI assistant that can engage with users empathetically.
+- Suggest music based on the user's emotional state to provide a calming experience.
 
-Part 1:Mental Health Chatbot
-Intent Recognition and Text Processing:
-A pre-trained neural network model analyzes the user's input and predicts the most likely intent based on patterns learned during training.
-The input is tokenized into individual words, and each word is lemmatized to its base form. This processed input is then used to create a "bag of words" representation.
-The "bag of words" is a binary vector indicating the presence or absence of specific words in the user's input. This representation allows the model to make predictions based on word patterns.
+---
 
-Model Prediction:
-Utilizes a pre-trained neural network to predict the intent class associated with the user's input. The bag of words is fed into the neural network model ('chatbot_model.h5'), which outputs a probability distribution over the possible intent classes. The model selects the intent with the highest probability as the predicted intent.
-Response Generation:
-Provides contextually relevant responses based on the recognized intent. The chatbot selects a random response from a set of predefined responses associated with the predicted intent in the 'intents.json' file. This randomness adds variability to the bot's replies.
-Part 2: Music Suggestion based on mood
-Apply nlp algorithms for sentiment analysis on user responses and based on the mood detected suggest songs based on genres corresponding to user’s mood.
+## ✅ Phase I 
 
+### 1. **Data Collection**
+- Historical employee data collected, including:
+    - Demographics
+    - Job-related attributes (e.g., workload, role, hours)
+    - Mental health indicators (e.g., stress levels, absenteeism)
 
+### 2. **Data Preprocessing**
+- Cleaned missing and duplicate values
+- Normalized data for model compatibility
 
-DATASET DESCRIPTION:
+### 3. **Model Development**
+- Built a BERT-based classification model to detect likelihood of:
+    - **Depression**
+    - **Anxiety**
+    - **Frustration**
+    - **Stress**
 
-This dataset contains a collection of conversations related to mental health. It covers various conversational styles, such as casual chats, common questions about mental health, discussions on traditional therapy, and general advice for people dealing with depression or anxiety. The main purpose of the dataset is to train a chatbot model to simulate a therapist, providing empathetic and supportive responses to those seeking emotional assistance.
-To train the model effectively, the dataset includes the concept of "intents," representing the core purpose behind a user's message. For instance, if a user expresses sadness, the corresponding intent would be labeled as "sad." Each intent is accompanied by sample messages (patterns) that align with that specific intent, along with corresponding responses that the chatbot should generate. By defining multiple intents, patterns, and responses, the model learns to recognize user intentions and generate appropriate and compassionate replies.
+### 4. **Classification**
+- Trained and tested the model to classify employees into mental health categories based on input features
 
-Key: "intents"
-Value: This is an array containing a list of intents.
-Each intent:
-Key: "tag"
-Value: This defines the intent category, such as “greeting” or “fact”.
-Key: "patterns"
-Value: This is an array containing user phrases that trigger the intent, for example, greetings like "Hi" or "Good morning".
-Key: "responses"
-Value: This is an array containing potential responses the chatbot can give depending on the user's specific phrase within the intent.
+---
+
+## 🚧 Phase II 
+
+- Build a basic NLP-based chatbot for mental health conversations
+- Integrate sentiment analysis and song recommendation engine
+- Combine prediction model and chatbot into a unified, user-friendly interface
+
+---
+
+## 🤖 Part 1: Mental Health Chatbot
+
+### 🔹 Intent Recognition & Text Processing
+
+- Uses a **pre-trained neural network model** (`chatbot_model.h5`) for intent classification
+- Text preprocessing includes:
+    - Tokenization
+    - Lemmatization
+    - "Bag of Words" vectorization
+
+### 🔹 Prediction
+
+- The bag-of-words input is passed to the neural network to predict the most likely **intent class**
+- A **probability distribution** is returned and the highest scoring intent is selected
+
+### 🔹 Response Generation
+
+- Based on the predicted intent, a **random response** is chosen from the mapped list in `intents.json`
+- Adds conversational variability while staying contextually relevant
+
+---
+
+## 🎵 Part 2: Music Recommendation Based on Mood
+
+- Applies **sentiment analysis** using NLP on user input
+- Suggests songs tailored to the detected emotional tone (e.g., calm, energetic, sad)
+- Matches user mood with genres to enhance relaxation or motivation
+
+---
+
+## 📁 Dataset Description
+
+The chatbot was trained on a **custom dataset** of mental health conversations that include:
+
+- **Casual chats**
+- **Common mental health questions**
+- **Therapy-style conversations**
+- **Supportive advice**
+
+### Intent Structure
+
+The dataset is based on **intent modeling**, where each intent includes:
+
+| Key         | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| `tag`       | Category of the intent (e.g., `greeting`, `sad`, `anxiety`)               |
+| `patterns`  | Example user inputs for that intent (e.g., "Hi", "I'm feeling down")       |
+| `responses` | Bot responses mapped to each intent (e.g., "I'm here for you", "Stay strong") |
+
+This structure helps the chatbot provide **empathetic and intelligent replies**, mimicking basic therapeutic dialogue.
+
+---
+
+## 🔧 Tech Stack
+
+- **Python**
+- **TensorFlow / Keras** (for model training)
+- **NLTK** (for preprocessing)
+- **JSON** (for storing intents)
+- **Sentiment Analysis** (for mood detection)
+- **BERT** (for mental health prediction model)
+
+---
+
+## 🙋‍♀️ Author
+
+**Nikita Singhal**  
+Full-stack Developer | AI Enthusiast | Mental Health Advocate  
+[GitHub Profile](https://github.com/nikita78699)
+
+---
+
